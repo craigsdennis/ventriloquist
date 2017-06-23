@@ -1,0 +1,19 @@
+{
+  "name": "ventriloquist",
+  "version": "1.0.0",
+  "description": "ASK lambda code",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ask",
+    "lambda"
+  ],
+  "author": "Craig Dennis",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^4.0.0",
+    "eslint-config-google": "^0.8.0"
+  }
+}
