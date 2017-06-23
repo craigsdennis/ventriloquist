@@ -4,4 +4,4 @@ Do you want to hear an impression?
 Okay ready? I'm the Google Maps lady.  <prosody pitch="high" rate="x-slow">Turn left</prosody>. . . <say-as interpret-as="interjection">bam</say-as>!
 Want another killer impersonation?
 Here I'll do Siri.  Go ahead, ask me a question.
-<prosody pitch="low" rate="slow">I don't know what you mean by <emphasis level="strong">"What should I ask?"</emphasis></prosody> <say-as interpret-as="interjection">booya</say-as>! nailed it!
+<prosody pitch="low" rate="slow">I don't know what you mean by <emphasis level="strong">"${whatevs}."</emphasis></prosody> <say-as interpret-as="interjection">booya</say-as>! nailed it!
