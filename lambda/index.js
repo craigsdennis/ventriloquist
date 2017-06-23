@@ -2,23 +2,18 @@
 
 const Alexa = require('alexa-sdk');
 const https = require('https');
-const util = require('util');
 
 const APP_ID = 'amzn1.ask.skill.37c38d6c-cbbb-41de-9ec3-9c09c6cf78a1';
 const SCRIPT_URL = 'https://raw.githubusercontent.com/craigsdennis/ventriloquist/master/docs/main.ssml';
 
-function getScript(attributes, callback) {
-    // Cache this per session
-    if (attributes.dummyScript !== undefined) {
-        return callback(null, attributes.dummyScript);
-    }
+function getScript(callback) {
+    // TODO: Cache this per session...only 24k though
     var request = https.get(SCRIPT_URL, (res) => {
         let data = '';
         res.on('data', function (chunk) {
             data += chunk;
         });
         res.on('end', function () {
-            attributes.dummyScript = data;
             callback(null, data);
         });
     });
@@ -37,8 +32,7 @@ const handlers = {
         this.emit('GetDummyLine');
     },
     'GetDummyLine': function () {
-        // Attributes are session based
-        getScript(this.attributes, (err, data) => {
+        getScript((err, data) => {
             if (err) {
                 this.emit(':tell', 'Something went really wrong: ' + err.message);
                 throw err;
@@ -52,19 +46,16 @@ const handlers = {
             }
             lineIndex++;
             this.attributes.lineIndex = lineIndex;
-            if (lineIndex > lines.length) {
-                this.emit(':tell', 'See ya next time!');
-            }
             const whatevs = this.event.request.intent.slots.Whatever.value;
             const line = lines[lineIndex].replace('${whatevs}', whatevs);
 
             // Create speech output
-            this.emit(':ask', line);
+            this.emit(lineIndex < lines.length ? ':ask' :':tell', line);
         });
 
     },
     'AMAZON.HelpIntent': function () {
-        this.emit(':ask', 'Derp', 'Derp');
+        this.emit(':ask', 'I am reading a script from ' + SCRIPT_URL);
     },
     'AMAZON.CancelIntent': function () {
         this.emit(':tell', 'Peace!');
