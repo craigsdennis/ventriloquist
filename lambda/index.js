@@ -4,8 +4,7 @@ const Alexa = require('alexa-sdk');
 const https = require('https');
 
 const APP_ID = 'amzn1.ask.skill.37c38d6c-cbbb-41de-9ec3-9c09c6cf78a1';
-// TEMP
-const SCRIPT_URL = 'https://gist.githubusercontent.com/7footmoustache/65d1f9bc81d6dee2a2a0f024109362f8/raw/b4a572447999bccbcd6624cab7265b761c6317be/script.ssml';
+const SCRIPT_URL = 'https://raw.githubusercontent.com/craigsdennis/ventriloquist/master/docs/main.ssml';
 
 function getLines(callback) {
     var request = https.get(SCRIPT_URL, (res) => {
