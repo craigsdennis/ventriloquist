@@ -63,3 +63,6 @@ typings/
 
 
 # End of https://www.gitignore.io/api/node
+
+# Ignore the zip upload
+index.zip
