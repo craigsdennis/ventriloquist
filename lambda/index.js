@@ -67,7 +67,7 @@ const handlers = {
     },
     'AMAZON.HelpIntent': function () {
         // TODO: Accept a URL to a plain text file
-        this.emit(':askWithCard', 'I am reading a script from ' + SCRIPT_URL);
+        this.emit(':askWithCard', `I am reading a script from  ${SCRIPT_URL}`);
     },
     'AMAZON.CancelIntent': function () {
         this.emit(':tell', 'Peace!');

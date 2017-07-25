@@ -1,5 +1,5 @@
-<say-as interpret-as="interjection">aw man</say-as>. . . Who are you calling dummy?!
-Is that <prosody rate="x-slow" pitch="low">all</prosody> ya got? <say-as interpret-as="interjection">blah</say-as>
+<say-as interpret-as="interjection">HEY!</say-as>. . . Who are you calling dummy?!
+Is that all ya got? <say-as interpret-as="interjection">${whatevs}</say-as>
 Do you want to hear an impression?
 Okay ready? I'm the Google Maps lady.  <prosody pitch="high" rate="x-slow">Turn left</prosody>. . . <say-as interpret-as="interjection">bam</say-as>!
 Want another killer impersonation?
